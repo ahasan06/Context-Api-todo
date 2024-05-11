@@ -1,0 +1,268 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: "Almarai", sans-serif;
+}
+
+body {
+  background-color: #1f1e1e;
+  color: white;
+  overflow: hidden;
+}
+
+h1 {
+  text-align: center;
+}
+
+.todo-wrapper {
+  background: #353434;
+  width: fit-content;
+  padding: 2%;
+  margin: 0 auto;
+  margin-top: 3%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0px 2px 4px black;
+}
+
+.todo-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid grey;
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+}
+
+.todo-input-item {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 25px;
+}
+
+.todo-input-item label {
+  font-weight: bold;
+  margin-bottom: 10px;
+
+}
+
+.todo-input-item input {
+  padding: 10px;
+  border: none;
+  width: 250px;
+}
+
+.todo-input-item input:focus {
+  outline: 1px solid rgb(0, 230, 122);
+}
+
+.primaryBtn {
+  background-color:green;
+  width: 100px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px;
+  margin-top: 30px;
+  text-wrap: nowrap;
+  color: white;
+  font-weight: bold;
+
+}
+
+.primaryBtn:hover {
+  background-color: rgba(0, 230, 123, 0.774);
+
+
+}
+
+.updateBtn {
+  background-color: red;
+  color: white;
+}
+
+.updateBtn:hover {
+  background-color: rgba(255, 0, 0, 0.603);
+  color: white;
+}
+
+.btn-area {
+  display: flex;
+}
+
+.secondaryBtn {
+  background-color: rgb(71, 71, 71);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px;
+  margin-bottom: 30px;
+  text-wrap: nowrap;
+  color: white;
+  font-weight: bold;
+}
+
+.active {
+
+  background-color:green;
+}
+
+/* Todo list */
+.todo-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-list-item {
+  background: #414040;
+  display: flex;
+  justify-content: space-between;
+
+  padding: 10px 25px;
+  margin-bottom: 10px;
+  box-shadow: 0px 2px 4px black;
+}
+
+
+.todo-edit-item {
+  /* background: #4900005b; */
+  position: relative;
+  
+}
+.todo-edit-item::before{
+  content:'Edit Mode Enable';
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  width:100%;
+  background: #1c4401d7;
+  filter: blur(0px) ;
+  -webkit-filter: blur(0px) ;
+  font-size: 25px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.todo-list-item.checked {
+  background-color: #e0ffe0;
+  border-left: 5px solid green;
+
+
+}
+
+.todo-list-item.checked h3,
+.todo-list-item.checked p {
+  color: black; 
+}
+
+
+.todo-list-item h3 {
+  font-size: 25px;
+  color: rgba(0, 230, 123, 0.774);
+  font-weight: bold;
+  margin-top: 0px;
+}
+
+.todo-list-item p {
+  font-size: 14px;
+  color: #bdbdbd;
+  font-weight: normal;
+  margin-top: 0px;
+}
+
+.todo-list-item-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+
+}
+
+
+.delete-icon,
+.check-icon {
+  background: red;
+  border: none;
+  width: 70px;
+  font-size: 15px;
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0px 1px 2px black;
+}
+
+.check-icon {
+  background-color:green;
+}
+
+.delete-icon:hover {
+  background: rgba(255, 0, 0, 0.671);
+
+}
+
+.check-icon:hover {
+  background: rgba(0, 230, 123, 0.527);
+}
+
+.todo-list .time-date {
+  color: #979797;
+  font-size: 10px;
+}
+
+/* check box design  */
+
+
+/* Custom checkbox styling */
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .todo-wrapper {
+    padding: 0 5vw;
+    width: 100%;
+    background: #353434;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .todo-input,
+  .todo-list-item-desc,
+  .todo-list-item-icon {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .todo-input {
+    padding: 10vw 2vw;
+  }
+
+  .todo-input-item {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+.todo-list-item-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+  .delete-icon {
+    width: 70px;
+    font-size: 2.5vw;
+    align-items: center;
+  }
+  #title,#description{
+    width: 100%;
+  }
+}
